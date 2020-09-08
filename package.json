@@ -1,0 +1,29 @@
+{
+  "name": "blender-history",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Markus-ipse/blender-history.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Markus-ipse/blender-history/issues"
+  },
+  "homepage": "https://github.com/Markus-ipse/blender-history#readme",
+  "dependencies": {
+    "date-fns": "^2.16.1",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
