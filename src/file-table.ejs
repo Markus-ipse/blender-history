@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <% columns.forEach(c => { %>
+    <th><%= c %></th>
+    <% }); %>
+  </thead>
+  <tbody>
+    <% files.forEach((f) => { %>
+    <tr>
+      <% columns.forEach(c => { %>
+      <td><%= f[c] %></td>
+      <% }); %>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
