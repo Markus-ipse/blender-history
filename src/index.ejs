@@ -6,14 +6,28 @@
     <title>My blender history</title>
     <meta name="description" content="My blender history" />
     <meta name="author" content="Markus Ånöstam" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
-    <link rel="stylesheet" href="css/styles.css?v=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="static/styles.css?v=1.0" />
   </head>
 
   <body>
-    <script src="js/scripts.js"></script>
-    <% projects.forEach((project) => { %>
-      <%- include('file-table', {files: project, columns: columns }); %>
-    <% }); %>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      lineData = <%- lineData %>
+    </script>
+    <div
+      class="chart-container"
+      style="position: relative; height: 40vh; width: 80vw"
+    >
+      <canvas id="myChart" width="800" height="300"></canvas>
+    </div>
+    <script src="static/index.js"></script>
   </body>
 </html>
