@@ -1,9 +1,10 @@
 import ejs = require("ejs");
-import { getLineData } from "./get-modified-files";
+import { getDataSets, createMonthSeries, getLabel } from "./get-modified-files";
 import { mkdir, writeFile, copyFile } from "fs/promises";
 
 async function render() {
-  const lineData = await getLineData();
+  const dataSets = await getDataSets();
+  const labels = createMonthSeries().map(getLabel);
 
   try {
     //create output directory
@@ -16,7 +17,8 @@ async function render() {
     //render ejs template to html string
     const html = await ejs
       .renderFile(__dirname + "/index.ejs", {
-        lineData: JSON.stringify(lineData),
+        dataSets: JSON.stringify(dataSets),
+        labels: JSON.stringify(labels),
       })
       .then((output) => output);
 
